@@ -1,20 +1,22 @@
 import React from "react";
 import estilos from "./Item.module.css";
-import ItemCount from "../ItemCount";
+import { Link } from "react-router-dom";
 
 const Item = ({ info }) => {
   return (
     <>
-      <span>
-        <a href="" className={estilos.products}>
+      <div>
+        <div className={estilos.products}>
           <img src={info.image} alt="" />
           <h2>{info.title}</h2>
-        </a>
+        </div>
         <h3>{info.price}</h3>
         <p>{info.description}</p>
         <p>Quedan: {info.stock} Unidades</p>
-      </span>
-      <ItemCount initial={1} stock={info.stock} />
+        <Link to={`/item/${info.id}`}>
+          <button>Ver detalle</button>
+        </Link>
+      </div>
     </>
   );
 };

@@ -1,21 +1,25 @@
 import React from "react";
 import estilos from "./NavBar.module.css";
 import CartWidget from "../CartWidget";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav>
       <ul className={estilos.NavBar}>
         <li>
-          <a href="./home">Home</a>
+          <NavLink to={"/"}>Home</NavLink>
         </li>
         <li>
-          <a href="./home">Productos</a>
+          <NavLink to={"/categoria/ropa"}>Ropa</NavLink>
         </li>
         <li>
-          <a href="./home">
+          <NavLink to={"/categoria/calzado"}>Calzado</NavLink>
+        </li>
+        <li>
+          <NavLink to={"cart"}>
             <CartWidget />
-          </a>
+          </NavLink>
         </li>
       </ul>
     </nav>

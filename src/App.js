@@ -4,15 +4,26 @@ import ItemDetailContainer from "./components/ItemDetailContainer/index.jsx";
 import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import "./App.css";
+import Cart from "./components/Cart";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <ItemListContainer />
-      <ItemDetailContainer />
-      <Main />
-      <Footer />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route
+            path="/categoria/:categoryName"
+            element={<ItemListContainer />}
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+        </Routes>
+        <Main />
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
