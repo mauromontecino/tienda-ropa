@@ -5,8 +5,11 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav>
-      <ul className={estilos.NavBar}>
+    <nav className={estilos.flexContainer}>
+      <h1 className={estilos.logo}>
+        <NavLink to={"/"}>Marca</NavLink>
+      </h1>
+      <ul className={estilos.navigation}>
         <li>
           <NavLink to={"/"}>Home</NavLink>
         </li>
