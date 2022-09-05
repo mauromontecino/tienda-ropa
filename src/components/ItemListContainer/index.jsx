@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Title from "../Title";
-import ItemCount from "../ItemCount";
 import ItemList from "../ItemList";
 import { useParams } from "react-router-dom";
 
@@ -57,14 +56,9 @@ export const ItemListContainer = ({ saludar }) => {
     }
   }, [categoryName]);
 
-  const onAdd = (cantidad) => {
-    console.log(`Compraste ${cantidad}`);
-  };
-
   return (
     <>
       <Title saludo={saludar} />
-      <ItemCount initial={1} stock={10} onAdd={onAdd} />
       <ItemList data={data} />
     </>
   );

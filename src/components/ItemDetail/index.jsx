@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import estilos from "./itemDetail.module.css";
+import ItemCount from "../ItemCount";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = ({ data }) => {
+  const [irAlCarrito, setIrAlCarrito] = useState(false);
+
+  const onAdd = (cantidad) => {
+    setIrAlCarrito(true);
+  };
+
   return (
     <div className={estilos.container}>
       <div className={estilos.detail}>
@@ -9,6 +17,11 @@ export const ItemDetail = ({ data }) => {
         <div className={estilos.content}>
           <h1>{data.title}</h1>
           <h3>{data.price}</h3>
+          {irAlCarrito ? (
+            <Link to="/cart">Terminar compra</Link>
+          ) : (
+            <ItemCount initial={1} stock={10} onAdd={onAdd} />
+          )}
         </div>
       </div>
     </div>
