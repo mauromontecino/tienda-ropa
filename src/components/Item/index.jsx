@@ -1,6 +1,6 @@
-import React from "react";
 import estilos from "./Item.module.css";
 import { Link } from "react-router-dom";
+import React from "react";
 
 const Item = ({ info }) => {
   return (
