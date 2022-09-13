@@ -18,7 +18,7 @@ const CartProvider = ({ children }) => {
     let newCart;
     let product = cart.find((product) => product.id === item.id);
     if (product) {
-      product.quantity += quantity;
+      product.quantity = quantity;
       newCart = [...cart];
     } else {
       product = { ...item, quantity: quantity };
@@ -26,10 +26,35 @@ const CartProvider = ({ children }) => {
     }
     setCart(newCart);
   };
-  console.log("carrito", cart);
+
+  const totalPrice = () => {
+    return cart.reduce((prev, act) => prev + act.quantity * act.price, 0);
+  };
+
+  const totalProducts = () => {
+    return cart.reduce(
+      (acumulador, productoActual) => acumulador + productoActual.quantity,
+      0
+    );
+  };
+
+  const getProductQuantity = (id) => {
+    const product = cart.find((prod) => prod.id === id);
+    return product?.quantity;
+  };
+
   return (
     <CartContext.Provider
-      value={{ clearCart, isInCart, removeProduct, addProduct }}
+      value={{
+        clearCart,
+        isInCart,
+        removeProduct,
+        addProduct,
+        totalPrice,
+        totalProducts,
+        getProductQuantity,
+        cart,
+      }}
     >
       {children}
     </CartContext.Provider>
