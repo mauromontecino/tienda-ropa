@@ -16,12 +16,12 @@ export const ItemCount = ({ initial = 1, stock, onAdd }) => {
 
   return (
     <div className={estilos.contador}>
-      <button disabled={count <= 1} onClick={restar}>
-        -
-      </button>
-      <span>{count}</span>
       <button disabled={count >= stock} onClick={sumar}>
         +
+      </button>
+      <span>{count} Unidades</span>
+      <button disabled={count <= 1} onClick={restar}>
+        -
       </button>
       <div>
         <button disabled={stock <= 0} onClick={() => onAdd(count)}>

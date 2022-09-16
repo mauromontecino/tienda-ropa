@@ -16,17 +16,24 @@ export const ItemDetail = ({ data }) => {
   const quantity = getProductQuantity(data.id);
 
   return (
-    <div className={estilos.container}>
-      <div className={estilos.detail}>
+    <div className={estilos.wrapper}>
+      <div className={estilos.productImg}>
         <img className={estilos.imagen} src={data.image} alt="" />
-        <div className={estilos.content}>
+      </div>
+      <div className={estilos.productInfo}>
+        <div className={estilos.productText}>
           <h1>{data.title}</h1>
-          <h3>{data.price}</h3>
-          {irAlCarrito ? (
-            <Link to="/cart">Terminar compra</Link>
-          ) : (
-            <ItemCount initial={quantity} stock={10} onAdd={onAdd} />
-          )}
+          <p>{data.description}</p>
+          <div className={estilos.productPriceBtn2}>
+            <p>${data.price}</p>
+          </div>
+          <div className={estilos.productPriceBtn}>
+            {irAlCarrito ? (
+              <Link to="/cart">Terminar compra</Link>
+            ) : (
+              <ItemCount initial={quantity} stock={data.stock} onAdd={onAdd} />
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,71 @@
+.wrapper {
+  height: 420px;
+  width: 200px;
+  border-radius: 7px 7px 7px 7px;
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.products {
+  display: block;
+}
 .products img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   margin-top: 10px;
+  border-radius: 7px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.products h2 {
+  color: deepskyblue;
+  text-align: center;
+}
+
+.products p {
+  margin-left: 5px;
+  margin-bottom: 20px;
+  color: #777;
+  height: 70px;
+  overflow: hidden;
+}
+
+.price h3 {
+  margin-left: 5px;
+}
+
+.stock p {
+  margin-left: 5px;
+  font-size: 14px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.btn {
+  text-align: center;
+}
+
+.productPriceBtn {
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+}
+
+.productPriceBtn button:hover {
+  background-color: #79b0a1;
 }
