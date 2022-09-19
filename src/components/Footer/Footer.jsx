@@ -24,6 +24,9 @@ const Footer = () => {
               <li>
                 <Link to={"/categoria/calzado"}>Calzado</Link>
               </li>
+              <li>
+                <Link to={"/categoria/accesorios"}>Accesorios</Link>
+              </li>
             </ul>
           </div>
           <div className={estilos.col}>

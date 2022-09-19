@@ -20,6 +20,9 @@ const NavBar = () => {
           <NavLink to={"/categoria/calzado"}>Calzado</NavLink>
         </li>
         <li>
+          <NavLink to={"/categoria/accesorios"}>Accesorios</NavLink>
+        </li>
+        <li>
           <NavLink to={"cart"}>
             <CartWidget />
           </NavLink>

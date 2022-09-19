@@ -15,6 +15,19 @@ export const ItemDetail = ({ data }) => {
 
   const quantity = getProductQuantity(data.id);
 
+  if (irAlCarrito) {
+    return (
+      <>
+        <div className={estilos.productPriceBtn}>
+          <Link to="/">Seguir comprando</Link>
+        </div>
+        <div className={estilos.productPriceBtn}>
+          <Link to="/cart">Terminar compra</Link>
+        </div>
+      </>
+    );
+  }
+
   return (
     <div className={estilos.wrapper}>
       <div className={estilos.productImg}>
@@ -29,7 +42,7 @@ export const ItemDetail = ({ data }) => {
           </div>
           <div className={estilos.productPriceBtn}>
             {irAlCarrito ? (
-              <Link to="/cart">Terminar compra</Link>
+              <></>
             ) : (
               <ItemCount initial={quantity} stock={data.stock} onAdd={onAdd} />
             )}
